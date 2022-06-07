@@ -13,11 +13,12 @@ namespace Job_Scheduling
 {
     public partial class MainMenu : Form
     {
-        readonly string period = DateTime.Now.ToString("tt", CultureInfo.InvariantCulture);
+        readonly string period = string.Empty;
 
         public MainMenu()
         {
             InitializeComponent();
+            period = DateTime.Now.ToString("tt", CultureInfo.InvariantCulture);
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
