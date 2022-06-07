@@ -28,286 +28,393 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvBloco_01 = new System.Windows.Forms.DataGridView();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.labName = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.labJob = new System.Windows.Forms.Label();
+            this.txtJob = new System.Windows.Forms.TextBox();
+            this.labJobDetails = new System.Windows.Forms.Label();
+            this.txtJobDetails = new System.Windows.Forms.TextBox();
+            this.labFinancialDetails = new System.Windows.Forms.Label();
+            this.txtFinancialDetails = new System.Windows.Forms.TextBox();
+            this.labPeriod = new System.Windows.Forms.Label();
+            this.labTitle = new System.Windows.Forms.Label();
+            this.dtpDeadline = new System.Windows.Forms.DateTimePicker();
+            this.labDeadline = new System.Windows.Forms.Label();
+            this.cmbPeriod = new System.Windows.Forms.ComboBox();
+            this.labCreated = new System.Windows.Forms.Label();
+            this.dtpCreated = new System.Windows.Forms.DateTimePicker();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.labStatus = new System.Windows.Forms.Label();
+            this.labLine = new System.Windows.Forms.Label();
+            this.Trabalho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBloco_01)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvBloco_01
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvBloco_01.AllowUserToAddRows = false;
+            this.dgvBloco_01.AllowUserToDeleteRows = false;
+            this.dgvBloco_01.AllowUserToResizeColumns = false;
+            this.dgvBloco_01.AllowUserToResizeRows = false;
+            this.dgvBloco_01.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(466, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(410, 527);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvBloco_01.ColumnHeadersHeight = 40;
+            this.dgvBloco_01.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvBloco_01.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Trabalho,
+            this.Prazo,
+            this.Status});
+            this.dgvBloco_01.Location = new System.Drawing.Point(464, 22);
+            this.dgvBloco_01.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.dgvBloco_01.MultiSelect = false;
+            this.dgvBloco_01.Name = "dgvBloco_01";
+            this.dgvBloco_01.ReadOnly = true;
+            this.dgvBloco_01.RowHeadersVisible = false;
+            this.dgvBloco_01.Size = new System.Drawing.Size(436, 610);
+            this.dgvBloco_01.TabIndex = 0;
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox1.Location = new System.Drawing.Point(21, 90);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(427, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtName.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(27, 111);
+            this.txtName.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(416, 23);
+            this.txtName.TabIndex = 1;
             // 
-            // label1
+            // labName
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.labName.AutoSize = true;
+            this.labName.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labName.Location = new System.Drawing.Point(24, 91);
+            this.labName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.labName.Name = "labName";
+            this.labName.Size = new System.Drawing.Size(415, 16);
+            this.labName.TabIndex = 2;
+            this.labName.Text = "Nome do cliente, empresa, organização ou remetente:";
             // 
-            // button1
+            // btnDelete
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Location = new System.Drawing.Point(21, 469);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 51);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDelete.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(27, 552);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(117, 80);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "Apagar";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnUpdate
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.Location = new System.Drawing.Point(168, 469);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(132, 51);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUpdate.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(163, 552);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(127, 80);
+            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.Text = "Atualizar";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnCreate
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.button3.Location = new System.Drawing.Point(316, 469);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(132, 51);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCreate.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.Location = new System.Drawing.Point(309, 552);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(134, 80);
+            this.btnCreate.TabIndex = 5;
+            this.btnCreate.Text = "Adicionar";
+            this.btnCreate.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // labJob
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labJob.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 122);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "label2";
+            this.labJob.AutoSize = true;
+            this.labJob.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labJob.Location = new System.Drawing.Point(24, 151);
+            this.labJob.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.labJob.Name = "labJob";
+            this.labJob.Size = new System.Drawing.Size(319, 16);
+            this.labJob.TabIndex = 7;
+            this.labJob.Text = "Trabalho ou projeto a ser desenvolvido:";
             // 
-            // textBox2
+            // txtJob
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtJob.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox2.Location = new System.Drawing.Point(21, 138);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(427, 20);
-            this.textBox2.TabIndex = 6;
+            this.txtJob.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtJob.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJob.Location = new System.Drawing.Point(27, 170);
+            this.txtJob.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.txtJob.Name = "txtJob";
+            this.txtJob.Size = new System.Drawing.Size(416, 23);
+            this.txtJob.TabIndex = 6;
             // 
-            // label3
+            // labJobDetails
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labJobDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 173);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "label3";
+            this.labJobDetails.AutoSize = true;
+            this.labJobDetails.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labJobDetails.Location = new System.Drawing.Point(24, 214);
+            this.labJobDetails.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.labJobDetails.Name = "labJobDetails";
+            this.labJobDetails.Size = new System.Drawing.Size(263, 16);
+            this.labJobDetails.TabIndex = 9;
+            this.labJobDetails.Text = "Detalhes do trabalho ou projeto:";
             // 
-            // textBox3
+            // txtJobDetails
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtJobDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox3.Location = new System.Drawing.Point(21, 189);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(427, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtJobDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtJobDetails.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJobDetails.Location = new System.Drawing.Point(27, 233);
+            this.txtJobDetails.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.txtJobDetails.Name = "txtJobDetails";
+            this.txtJobDetails.Size = new System.Drawing.Size(416, 23);
+            this.txtJobDetails.TabIndex = 8;
             // 
-            // label4
+            // labFinancialDetails
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labFinancialDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 222);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "label4";
+            this.labFinancialDetails.AutoSize = true;
+            this.labFinancialDetails.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labFinancialDetails.Location = new System.Drawing.Point(24, 274);
+            this.labFinancialDetails.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.labFinancialDetails.Name = "labFinancialDetails";
+            this.labFinancialDetails.Size = new System.Drawing.Size(175, 16);
+            this.labFinancialDetails.TabIndex = 11;
+            this.labFinancialDetails.Text = "Detalhes financeiros:";
             // 
-            // textBox4
+            // txtFinancialDetails
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtFinancialDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox4.Location = new System.Drawing.Point(21, 238);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(427, 20);
-            this.textBox4.TabIndex = 10;
+            this.txtFinancialDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFinancialDetails.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFinancialDetails.Location = new System.Drawing.Point(27, 293);
+            this.txtFinancialDetails.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.txtFinancialDetails.Name = "txtFinancialDetails";
+            this.txtFinancialDetails.Size = new System.Drawing.Size(416, 23);
+            this.txtFinancialDetails.TabIndex = 10;
             // 
-            // label5
+            // labPeriod
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labPeriod.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 271);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "label5";
+            this.labPeriod.AutoSize = true;
+            this.labPeriod.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labPeriod.Location = new System.Drawing.Point(24, 448);
+            this.labPeriod.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.labPeriod.Name = "labPeriod";
+            this.labPeriod.Size = new System.Drawing.Size(151, 16);
+            this.labPeriod.TabIndex = 15;
+            this.labPeriod.Text = "Período do evento:";
             // 
-            // textBox5
+            // labTitle
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labTitle.AutoSize = true;
+            this.labTitle.Font = new System.Drawing.Font("Courier New", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labTitle.Location = new System.Drawing.Point(21, 29);
+            this.labTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.labTitle.Name = "labTitle";
+            this.labTitle.Size = new System.Drawing.Size(238, 31);
+            this.labTitle.TabIndex = 16;
+            this.labTitle.Text = "Job Scheduling";
+            // 
+            // dtpDeadline
+            // 
+            this.dtpDeadline.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox5.Location = new System.Drawing.Point(21, 287);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(427, 20);
-            this.textBox5.TabIndex = 12;
+            this.dtpDeadline.CustomFormat = "dd/MMM/yyyy";
+            this.dtpDeadline.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDeadline.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDeadline.Location = new System.Drawing.Point(27, 408);
+            this.dtpDeadline.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.dtpDeadline.Name = "dtpDeadline";
+            this.dtpDeadline.Size = new System.Drawing.Size(416, 23);
+            this.dtpDeadline.TabIndex = 18;
             // 
-            // label6
+            // labDeadline
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labDeadline.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 416);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "label6";
+            this.labDeadline.AutoSize = true;
+            this.labDeadline.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labDeadline.Location = new System.Drawing.Point(24, 389);
+            this.labDeadline.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.labDeadline.Name = "labDeadline";
+            this.labDeadline.Size = new System.Drawing.Size(199, 16);
+            this.labDeadline.TabIndex = 19;
+            this.labDeadline.Text = "Data de entrega e prazo:";
             // 
-            // label7
+            // cmbPeriod
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(18, 19);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "label7";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(368, 19);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 17;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cmbPeriod.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(21, 384);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(427, 20);
-            this.dateTimePicker1.TabIndex = 18;
+            this.cmbPeriod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPeriod.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPeriod.FormattingEnabled = true;
+            this.cmbPeriod.Items.AddRange(new object[] {
+            "Ambos os períodos (AM e PM).",
+            "Entre meia-noite à meio-dia (AM).",
+            "Entre meio-dia à meia-noite (PM).",
+            "Nenhum período em específico."});
+            this.cmbPeriod.Location = new System.Drawing.Point(27, 467);
+            this.cmbPeriod.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.cmbPeriod.Name = "cmbPeriod";
+            this.cmbPeriod.Size = new System.Drawing.Size(416, 24);
+            this.cmbPeriod.TabIndex = 20;
             // 
-            // label8
+            // labCreated
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labCreated.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(18, 368);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "label8";
+            this.labCreated.AutoSize = true;
+            this.labCreated.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labCreated.Location = new System.Drawing.Point(24, 329);
+            this.labCreated.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.labCreated.Name = "labCreated";
+            this.labCreated.Size = new System.Drawing.Size(271, 16);
+            this.labCreated.TabIndex = 22;
+            this.labCreated.Text = "Data de solicitação ou do evento:";
             // 
-            // comboBox1
+            // dtpCreated
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dtpCreated.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(21, 432);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(427, 21);
-            this.comboBox1.TabIndex = 20;
+            this.dtpCreated.CustomFormat = "dd/MMM/yyyy";
+            this.dtpCreated.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpCreated.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpCreated.Location = new System.Drawing.Point(27, 348);
+            this.dtpCreated.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.dtpCreated.Name = "dtpCreated";
+            this.dtpCreated.Size = new System.Drawing.Size(416, 23);
+            this.dtpCreated.TabIndex = 21;
             // 
-            // label9
+            // cmbStatus
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cmbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(18, 319);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "label9";
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "Agendado.",
+            "Cancelado.",
+            "Concluído.",
+            "Em andamento."});
+            this.cmbStatus.Location = new System.Drawing.Point(27, 522);
+            this.cmbStatus.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(416, 24);
+            this.cmbStatus.TabIndex = 24;
             // 
-            // dateTimePicker2
+            // labStatus
             // 
-            this.dateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(21, 335);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(427, 20);
-            this.dateTimePicker2.TabIndex = 21;
+            this.labStatus.AutoSize = true;
+            this.labStatus.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labStatus.Location = new System.Drawing.Point(24, 503);
+            this.labStatus.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.labStatus.Name = "labStatus";
+            this.labStatus.Size = new System.Drawing.Size(111, 16);
+            this.labStatus.TabIndex = 23;
+            this.labStatus.Text = "Estado atual:";
+            // 
+            // labLine
+            // 
+            this.labLine.BackColor = System.Drawing.Color.Transparent;
+            this.labLine.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labLine.Location = new System.Drawing.Point(27, 62);
+            this.labLine.Name = "labLine";
+            this.labLine.Size = new System.Drawing.Size(416, 1);
+            this.labLine.TabIndex = 28;
+            // 
+            // Trabalho
+            // 
+            this.Trabalho.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Trabalho.HeaderText = "Trabalho";
+            this.Trabalho.Name = "Trabalho";
+            this.Trabalho.ReadOnly = true;
+            this.Trabalho.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Trabalho.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Prazo
+            // 
+            this.Prazo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Prazo.HeaderText = "Data de entrega";
+            this.Prazo.Name = "Prazo";
+            this.Prazo.ReadOnly = true;
+            this.Prazo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Prazo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Status
+            // 
+            this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Status.HeaderText = "Estado atual";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 532);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(923, 655);
+            this.Controls.Add(this.labLine);
+            this.Controls.Add(this.cmbStatus);
+            this.Controls.Add(this.labStatus);
+            this.Controls.Add(this.labCreated);
+            this.Controls.Add(this.dtpCreated);
+            this.Controls.Add(this.cmbPeriod);
+            this.Controls.Add(this.labDeadline);
+            this.Controls.Add(this.dtpDeadline);
+            this.Controls.Add(this.labTitle);
+            this.Controls.Add(this.labPeriod);
+            this.Controls.Add(this.labFinancialDetails);
+            this.Controls.Add(this.txtFinancialDetails);
+            this.Controls.Add(this.labJobDetails);
+            this.Controls.Add(this.txtJobDetails);
+            this.Controls.Add(this.labJob);
+            this.Controls.Add(this.txtJob);
+            this.Controls.Add(this.btnCreate);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.labName);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.dgvBloco_01);
+            this.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Job Scheduling";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.MainMenu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBloco_01)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,28 +422,31 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DataGridView dgvBloco_01;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label labName;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.Label labJob;
+        private System.Windows.Forms.TextBox txtJob;
+        private System.Windows.Forms.Label labJobDetails;
+        private System.Windows.Forms.TextBox txtJobDetails;
+        private System.Windows.Forms.Label labFinancialDetails;
+        private System.Windows.Forms.TextBox txtFinancialDetails;
+        private System.Windows.Forms.Label labPeriod;
+        private System.Windows.Forms.Label labTitle;
+        private System.Windows.Forms.DateTimePicker dtpDeadline;
+        private System.Windows.Forms.Label labDeadline;
+        private System.Windows.Forms.ComboBox cmbPeriod;
+        private System.Windows.Forms.Label labCreated;
+        private System.Windows.Forms.DateTimePicker dtpCreated;
+        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.Label labStatus;
+        private System.Windows.Forms.Label labLine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Trabalho;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prazo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     }
 }
 
