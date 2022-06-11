@@ -16,7 +16,7 @@ namespace Job_Scheduling
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainMenu());
+            Application.Run(new FrmMainMenu());
         }
     }
 }

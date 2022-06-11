@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Job Scheduling", "Job Scheduling\Job Scheduling.csproj", "{F7C657C9-5B9A-4096-9812-A21AFA0A213D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Work Schedule", "Job Scheduling\Work Schedule.csproj", "{F7C657C9-5B9A-4096-9812-A21AFA0A213D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
