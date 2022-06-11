@@ -16,5 +16,17 @@ namespace Job_Scheduling
         {
             InitializeComponent();
         }
+
+        private void FrmQuery_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            FrmMainMenu MainMenu = new FrmMainMenu();
+            this.Hide();
+            MainMenu.ShowDialog();
+        }
     }
 }

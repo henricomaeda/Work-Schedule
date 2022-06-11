@@ -112,5 +112,12 @@ namespace Job_Scheduling
         {
             TextBoxPlaceholder(txtFinancialDetails);
         }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            FrmMainMenu MainMenu = new FrmMainMenu();
+            this.Hide();
+            MainMenu.ShowDialog();
+        }
     }
 }
