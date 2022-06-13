@@ -11,13 +11,20 @@ using System.Windows.Forms;
 
 namespace Job_Scheduling
 {
-    public partial class FrmData : System.Windows.Forms.Form
+    public partial class FrmData : Form
     {
         private readonly string period = string.Empty;
+        private readonly int id = -1;
 
-        public FrmData()
+        public FrmData(int idRoute)
         {
             InitializeComponent();
+
+            if (idRoute >= 0)
+            {
+                id = idRoute;
+            }
+
             period = DateTime.Now.ToString("tt", CultureInfo.InvariantCulture);
         }
 
@@ -38,9 +45,10 @@ namespace Job_Scheduling
 
         private void BtnReturn_Click(object sender, EventArgs e)
         {
-            FrmMainMenu MainMenu = new FrmMainMenu();
+            FrmMainMenu mainMenu = new FrmMainMenu();
             this.Hide();
-            MainMenu.ShowDialog();
+            mainMenu.Closed += (s, args) => this.Close();
+            mainMenu.ShowDialog();
         }
 
         private void BtnUpdate_Click(object sender, EventArgs e)
