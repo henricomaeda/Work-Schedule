@@ -1,46 +1,83 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace Job_Scheduling
 {
     public partial class FrmData : Form
     {
-        private readonly string period = string.Empty;
+        private string period = string.Empty;
         private readonly int id = -1;
 
         public FrmData(int idRoute)
         {
             InitializeComponent();
+            period = DateTime.Now.ToString("tt", CultureInfo.InvariantCulture);
+
+            if (Data.Darkmode(false, true))
+            {
+                this.BackColor = Color.FromArgb(22, 27, 34);
+                lblTitle.BackColor = Color.FromArgb(22, 27, 34);
+                lblTitle.ForeColor = Color.FromArgb(240, 246, 252);
+                lblName.BackColor = Color.FromArgb(22, 27, 34);
+                lblName.ForeColor = Color.FromArgb(240, 246, 252);
+                txtName.BackColor = Color.FromArgb(33, 38, 45);
+                txtName.ForeColor = Color.FromArgb(201, 209, 217);
+                lblJob.BackColor = Color.FromArgb(22, 27, 34);
+                lblJob.ForeColor = Color.FromArgb(240, 246, 252);
+                txtJob.BackColor = Color.FromArgb(33, 38, 45);
+                txtJob.ForeColor = Color.FromArgb(201, 209, 217);
+                lblJobDetails.BackColor = Color.FromArgb(22, 27, 34);
+                lblJobDetails.ForeColor = Color.FromArgb(240, 246, 252);
+                txtJobDetails.BackColor = Color.FromArgb(33, 38, 45);
+                txtJobDetails.ForeColor = Color.FromArgb(201, 209, 217);
+                lblFinancialDetails.BackColor = Color.FromArgb(22, 27, 34);
+                lblFinancialDetails.ForeColor = Color.FromArgb(240, 246, 252);
+                txtFinancialDetails.BackColor = Color.FromArgb(33, 38, 45);
+                txtFinancialDetails.ForeColor = Color.FromArgb(201, 209, 217);
+                lblCreated.BackColor = Color.FromArgb(22, 27, 34);
+                lblCreated.ForeColor = Color.FromArgb(240, 246, 252);
+                txtCreated.BackColor = Color.FromArgb(33, 38, 45);
+                txtCreated.ForeColor = Color.FromArgb(201, 209, 217);
+                lblDeadline.BackColor = Color.FromArgb(22, 27, 34);
+                lblDeadline.ForeColor = Color.FromArgb(240, 246, 252);
+                txtDeadline.BackColor = Color.FromArgb(33, 38, 45);
+                txtDeadline.ForeColor = Color.FromArgb(201, 209, 217);
+                lblPeriod.BackColor = Color.FromArgb(22, 27, 34);
+                lblPeriod.ForeColor = Color.FromArgb(240, 246, 252);
+                txtPeriod.BackColor = Color.FromArgb(33, 38, 45);
+                txtPeriod.ForeColor = Color.FromArgb(201, 209, 217);
+                lblStatus.BackColor = Color.FromArgb(22, 27, 34);
+                lblStatus.ForeColor = Color.FromArgb(240, 246, 252);
+                txtStatus.BackColor = Color.FromArgb(33, 38, 45);
+                txtStatus.ForeColor = Color.FromArgb(201, 209, 217);
+                btnAdd.BackColor = Color.FromArgb(33, 38, 45);
+                btnAdd.ForeColor = Color.FromArgb(201, 209, 217);
+                btnReturn.BackColor = Color.FromArgb(33, 38, 45);
+                btnReturn.ForeColor = Color.FromArgb(201, 209, 217);
+                btnUpdate.BackColor = Color.FromArgb(33, 38, 45);
+                btnUpdate.ForeColor = Color.FromArgb(201, 209, 217);
+            }
 
             if (idRoute >= 0)
             {
                 id = idRoute;
             }
-
-            period = DateTime.Now.ToString("tt", CultureInfo.InvariantCulture);
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            JobDetailsLeave(sender, e);
+            if (period == "AM") period = "Entre meia-noite a meio-dia.";
+            else period = "Entre meia-dia a meia-noite.";
+
+            CreatedLeave(sender, e);
+            DeadlineLeave(sender, e);
             FinancialDetailsLeave(sender, e);
-
-            dtpCreated.Value = DateTime.Now;
-            dtpDeadline.Value = DateTime.Now.AddDays(1);
-
-            if (period == "AM") cmbPeriod.SelectedIndex = 0;
-            else if (period == "PM") cmbPeriod.SelectedIndex = 1;
-            else cmbPeriod.SelectedIndex = 2;
-
-            cmbStatus.SelectedIndex = 0;
+            JobDetailsLeave(sender, e);
+            PeriodLeave(sender, e);
+            StatusLeave(sender, e);
         }
 
         private void BtnReturn_Click(object sender, EventArgs e)
@@ -87,18 +124,53 @@ namespace Job_Scheduling
             {
                 if (string.IsNullOrWhiteSpace(textbox.Text))
                 {
-                    textbox.Text = "Nenhum.";
+                    if (textbox == txtCreated) textbox.Text = DateTime.Today.ToString("dd/MMM/yyyy");
+                    else if (textbox == txtDeadline) textbox.Text = DateTime.Today.AddDays(1).ToString("dd/MMM/yyyy");
+                    else if (textbox == txtPeriod) textbox.Text = period;
+                    else if (textbox == txtStatus) textbox.Text = "Agendado.";
+                    else textbox.Text = "Nenhum.";
                     textbox.ForeColor = Color.Gray;
                 }
             }
             else
             {
-                if (textbox.Text == "Nenhum.")
+                if (textbox.ForeColor == Color.Gray)
                 {
                     textbox.Text = "";
-                    textbox.ForeColor = Color.Black;
+                    if (Data.Darkmode(false, true)) textbox.ForeColor = Color.FromArgb(240, 246, 252);
+                    else textbox.ForeColor = Color.Black;
                 }
             }
+        }
+
+        private void CreatedEnter(object sender, EventArgs e)
+        {
+            TextBoxPlaceholder(txtCreated, false);
+        }
+
+        private void CreatedLeave(object sender, EventArgs e)
+        {
+            TextBoxPlaceholder(txtCreated);
+        }
+
+        private void DeadlineEnter(object sender, EventArgs e)
+        {
+            TextBoxPlaceholder(txtDeadline, false);
+        }
+
+        private void DeadlineLeave(object sender, EventArgs e)
+        {
+            TextBoxPlaceholder(txtDeadline);
+        }
+
+        private void FinancialDetailsEnter(object sender, EventArgs e)
+        {
+            TextBoxPlaceholder(txtFinancialDetails, false);
+        }
+
+        private void FinancialDetailsLeave(object sender, EventArgs e)
+        {
+            TextBoxPlaceholder(txtFinancialDetails);
         }
 
         private void JobDetailsEnter(object sender, EventArgs e)
@@ -111,14 +183,24 @@ namespace Job_Scheduling
             TextBoxPlaceholder(txtJobDetails);
         }
 
-        private void FinancialDetailsEnter(object sender, EventArgs e)
+        private void PeriodEnter(object sender, EventArgs e)
         {
-            TextBoxPlaceholder(txtFinancialDetails, false);
+            TextBoxPlaceholder(txtPeriod, false);
         }
 
-        private void FinancialDetailsLeave(object sender, EventArgs e)
+        private void PeriodLeave(object sender, EventArgs e)
         {
-            TextBoxPlaceholder(txtFinancialDetails);
+            TextBoxPlaceholder(txtPeriod);
+        }
+
+        private void StatusEnter(object sender, EventArgs e)
+        {
+            TextBoxPlaceholder(txtStatus, false);
+        }
+
+        private void StatusLeave(object sender, EventArgs e)
+        {
+            TextBoxPlaceholder(txtStatus);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)

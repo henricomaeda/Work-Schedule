@@ -28,8 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmQuery));
             this.dgvWorks = new System.Windows.Forms.DataGridView();
+            this.Column_00 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_01 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_02 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_05 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_06 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_08 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnSchedule = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -48,13 +56,102 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvWorks.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dgvWorks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWorks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvWorks.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            this.dgvWorks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWorks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvWorks.ColumnHeadersHeight = 50;
+            this.dgvWorks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvWorks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column_00,
+            this.Column_01,
+            this.Column_02,
+            this.Column_05,
+            this.Column_06,
+            this.Column_08});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvWorks.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvWorks.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvWorks.EnableHeadersVisualStyles = false;
             this.dgvWorks.Location = new System.Drawing.Point(21, 21);
             this.dgvWorks.MultiSelect = false;
             this.dgvWorks.Name = "dgvWorks";
             this.dgvWorks.ReadOnly = true;
+            this.dgvWorks.RowHeadersVisible = false;
+            this.dgvWorks.RowHeadersWidth = 50;
+            this.dgvWorks.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvWorks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvWorks.Size = new System.Drawing.Size(881, 447);
             this.dgvWorks.TabIndex = 0;
+            this.dgvWorks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvWorks_CellContentClick);
+            // 
+            // Column_00
+            // 
+            this.Column_00.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_00.HeaderText = "Identificador";
+            this.Column_00.Name = "Column_00";
+            this.Column_00.ReadOnly = true;
+            this.Column_00.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column_00.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column_00.Visible = false;
+            // 
+            // Column_01
+            // 
+            this.Column_01.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_01.HeaderText = "Nome";
+            this.Column_01.Name = "Column_01";
+            this.Column_01.ReadOnly = true;
+            this.Column_01.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column_01.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column_02
+            // 
+            this.Column_02.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_02.HeaderText = "Trabalho";
+            this.Column_02.Name = "Column_02";
+            this.Column_02.ReadOnly = true;
+            this.Column_02.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column_02.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column_05
+            // 
+            this.Column_05.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_05.HeaderText = "Data";
+            this.Column_05.Name = "Column_05";
+            this.Column_05.ReadOnly = true;
+            this.Column_05.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column_05.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column_06
+            // 
+            this.Column_06.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_06.HeaderText = "Prazo";
+            this.Column_06.Name = "Column_06";
+            this.Column_06.ReadOnly = true;
+            this.Column_06.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column_06.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column_08
+            // 
+            this.Column_08.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_08.HeaderText = "Estado atual";
+            this.Column_08.Name = "Column_08";
+            this.Column_08.ReadOnly = true;
+            this.Column_08.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column_08.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // btnReturn
             // 
@@ -154,5 +251,11 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.TextBox txtSelectedWork;
         private System.Windows.Forms.Label lblSelectedWork;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_00;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_01;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_02;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_05;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_06;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_08;
     }
 }

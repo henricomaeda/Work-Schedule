@@ -41,15 +41,15 @@
             this.lblFinancialDetails = new System.Windows.Forms.Label();
             this.txtFinancialDetails = new System.Windows.Forms.TextBox();
             this.lblPeriod = new System.Windows.Forms.Label();
-            this.labTitle = new System.Windows.Forms.Label();
-            this.dtpDeadline = new System.Windows.Forms.DateTimePicker();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.lblDeadline = new System.Windows.Forms.Label();
-            this.cmbPeriod = new System.Windows.Forms.ComboBox();
             this.lblCreated = new System.Windows.Forms.Label();
-            this.dtpCreated = new System.Windows.Forms.DateTimePicker();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.lblStatus = new System.Windows.Forms.Label();
-            this.labLine = new System.Windows.Forms.Label();
+            this.lblLine = new System.Windows.Forms.Label();
+            this.txtCreated = new System.Windows.Forms.TextBox();
+            this.txtDeadline = new System.Windows.Forms.TextBox();
+            this.txtPeriod = new System.Windows.Forms.TextBox();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtName
@@ -81,6 +81,7 @@
             // 
             this.btnReturn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReturn.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.Location = new System.Drawing.Point(34, 551);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
@@ -96,6 +97,7 @@
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btnUpdate.Enabled = false;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(162, 551);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
@@ -111,6 +113,7 @@
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(300, 551);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
@@ -213,31 +216,18 @@
             this.lblPeriod.TabIndex = 15;
             this.lblPeriod.Text = "Período do evento:";
             // 
-            // labTitle
+            // lblTitle
             // 
-            this.labTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labTitle.Font = new System.Drawing.Font("Courier New", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labTitle.Location = new System.Drawing.Point(34, 23);
-            this.labTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.labTitle.Name = "labTitle";
-            this.labTitle.Size = new System.Drawing.Size(470, 31);
-            this.labTitle.TabIndex = 16;
-            this.labTitle.Text = "FORMULÁRIO";
-            this.labTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dtpDeadline
-            // 
-            this.dtpDeadline.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpDeadline.CustomFormat = "dd/MMM/yyyy";
-            this.dtpDeadline.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDeadline.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDeadline.Location = new System.Drawing.Point(34, 398);
-            this.dtpDeadline.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.dtpDeadline.Name = "dtpDeadline";
-            this.dtpDeadline.Size = new System.Drawing.Size(470, 23);
-            this.dtpDeadline.TabIndex = 18;
+            this.lblTitle.Font = new System.Drawing.Font("Courier New", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(34, 23);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(470, 31);
+            this.lblTitle.TabIndex = 16;
+            this.lblTitle.Text = "FORMULÁRIO";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDeadline
             // 
@@ -252,23 +242,6 @@
             this.lblDeadline.TabIndex = 19;
             this.lblDeadline.Text = "Data de entrega e prazo:";
             // 
-            // cmbPeriod
-            // 
-            this.cmbPeriod.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbPeriod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPeriod.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbPeriod.FormattingEnabled = true;
-            this.cmbPeriod.Items.AddRange(new object[] {
-            "Entre meia-noite à meio-dia.",
-            "Entre meio-dia à meia-noite.",
-            "Nenhum período em específico."});
-            this.cmbPeriod.Location = new System.Drawing.Point(34, 457);
-            this.cmbPeriod.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.cmbPeriod.Name = "cmbPeriod";
-            this.cmbPeriod.Size = new System.Drawing.Size(470, 24);
-            this.cmbPeriod.TabIndex = 20;
-            // 
             // lblCreated
             // 
             this.lblCreated.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -281,37 +254,6 @@
             this.lblCreated.Size = new System.Drawing.Size(271, 16);
             this.lblCreated.TabIndex = 22;
             this.lblCreated.Text = "Data de solicitação ou do evento:";
-            // 
-            // dtpCreated
-            // 
-            this.dtpCreated.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpCreated.CustomFormat = "dd/MMM/yyyy";
-            this.dtpCreated.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCreated.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpCreated.Location = new System.Drawing.Point(34, 338);
-            this.dtpCreated.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.dtpCreated.Name = "dtpCreated";
-            this.dtpCreated.Size = new System.Drawing.Size(470, 23);
-            this.dtpCreated.TabIndex = 21;
-            // 
-            // cmbStatus
-            // 
-            this.cmbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbStatus.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
-            "Agendado.",
-            "Cancelado.",
-            "Concluído.",
-            "Em andamento."});
-            this.cmbStatus.Location = new System.Drawing.Point(34, 512);
-            this.cmbStatus.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(470, 24);
-            this.cmbStatus.TabIndex = 24;
             // 
             // lblStatus
             // 
@@ -326,32 +268,88 @@
             this.lblStatus.TabIndex = 23;
             this.lblStatus.Text = "Estado atual:";
             // 
-            // labLine
+            // lblLine
             // 
-            this.labLine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblLine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labLine.BackColor = System.Drawing.Color.Transparent;
-            this.labLine.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.labLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labLine.Location = new System.Drawing.Point(34, 54);
-            this.labLine.Name = "labLine";
-            this.labLine.Size = new System.Drawing.Size(470, 1);
-            this.labLine.TabIndex = 28;
+            this.lblLine.BackColor = System.Drawing.Color.Transparent;
+            this.lblLine.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblLine.Location = new System.Drawing.Point(34, 54);
+            this.lblLine.Name = "lblLine";
+            this.lblLine.Size = new System.Drawing.Size(470, 1);
+            this.lblLine.TabIndex = 28;
+            // 
+            // txtCreated
+            // 
+            this.txtCreated.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCreated.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCreated.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCreated.Location = new System.Drawing.Point(34, 338);
+            this.txtCreated.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.txtCreated.Name = "txtCreated";
+            this.txtCreated.Size = new System.Drawing.Size(470, 23);
+            this.txtCreated.TabIndex = 29;
+            this.txtCreated.Enter += new System.EventHandler(this.CreatedEnter);
+            this.txtCreated.Leave += new System.EventHandler(this.CreatedLeave);
+            // 
+            // txtDeadline
+            // 
+            this.txtDeadline.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDeadline.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDeadline.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDeadline.Location = new System.Drawing.Point(34, 398);
+            this.txtDeadline.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.txtDeadline.Name = "txtDeadline";
+            this.txtDeadline.Size = new System.Drawing.Size(470, 23);
+            this.txtDeadline.TabIndex = 30;
+            this.txtDeadline.Enter += new System.EventHandler(this.DeadlineEnter);
+            this.txtDeadline.Leave += new System.EventHandler(this.DeadlineLeave);
+            // 
+            // txtPeriod
+            // 
+            this.txtPeriod.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPeriod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPeriod.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPeriod.Location = new System.Drawing.Point(34, 457);
+            this.txtPeriod.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.txtPeriod.Name = "txtPeriod";
+            this.txtPeriod.Size = new System.Drawing.Size(470, 23);
+            this.txtPeriod.TabIndex = 31;
+            this.txtPeriod.Enter += new System.EventHandler(this.PeriodEnter);
+            this.txtPeriod.Leave += new System.EventHandler(this.PeriodLeave);
+            // 
+            // txtStatus
+            // 
+            this.txtStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStatus.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStatus.Location = new System.Drawing.Point(34, 512);
+            this.txtStatus.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(470, 23);
+            this.txtStatus.TabIndex = 32;
+            this.txtStatus.Enter += new System.EventHandler(this.StatusEnter);
+            this.txtStatus.Leave += new System.EventHandler(this.StatusLeave);
             // 
             // FrmData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(538, 664);
-            this.Controls.Add(this.labLine);
-            this.Controls.Add(this.cmbStatus);
+            this.Controls.Add(this.txtStatus);
+            this.Controls.Add(this.txtPeriod);
+            this.Controls.Add(this.txtDeadline);
+            this.Controls.Add(this.txtCreated);
+            this.Controls.Add(this.lblLine);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblCreated);
-            this.Controls.Add(this.dtpCreated);
-            this.Controls.Add(this.cmbPeriod);
             this.Controls.Add(this.lblDeadline);
-            this.Controls.Add(this.dtpDeadline);
-            this.Controls.Add(this.labTitle);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblPeriod);
             this.Controls.Add(this.lblFinancialDetails);
             this.Controls.Add(this.txtFinancialDetails);
@@ -389,15 +387,15 @@
         private System.Windows.Forms.Label lblFinancialDetails;
         private System.Windows.Forms.TextBox txtFinancialDetails;
         private System.Windows.Forms.Label lblPeriod;
-        private System.Windows.Forms.Label labTitle;
-        private System.Windows.Forms.DateTimePicker dtpDeadline;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDeadline;
-        private System.Windows.Forms.ComboBox cmbPeriod;
         private System.Windows.Forms.Label lblCreated;
-        private System.Windows.Forms.DateTimePicker dtpCreated;
-        private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.Label labLine;
+        private System.Windows.Forms.Label lblLine;
+        private System.Windows.Forms.TextBox txtCreated;
+        private System.Windows.Forms.TextBox txtDeadline;
+        private System.Windows.Forms.TextBox txtPeriod;
+        private System.Windows.Forms.TextBox txtStatus;
     }
 }
 

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Job_Scheduling
@@ -17,10 +11,11 @@ namespace Job_Scheduling
         public FrmQuery()
         {
             InitializeComponent();
+            Data.Load();
+
             if (Data.Darkmode(false, true))
             {
                 this.BackColor = Color.FromArgb(22, 27, 34);
-                dgvWorks.BackgroundColor = Color.FromArgb(13, 17, 23);
                 btnReturn.BackColor = Color.FromArgb(33, 38, 45);
                 btnReturn.ForeColor = Color.FromArgb(201, 209, 217);
                 lblSelectedWork.BackColor = Color.FromArgb(22, 27, 34);
@@ -31,7 +26,25 @@ namespace Job_Scheduling
                 btnUpdate.ForeColor = Color.FromArgb(201, 209, 217);
                 btnSchedule.BackColor = Color.FromArgb(33, 38, 45);
                 btnSchedule.ForeColor = Color.FromArgb(201, 209, 217);
+
+                dgvWorks.BackgroundColor = Color.FromArgb(13, 17, 23);
+                dgvWorks.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(22, 27, 34);
+                dgvWorks.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(22, 27, 34);
+                dgvWorks.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(240, 246, 252);
+                dgvWorks.RowsDefaultCellStyle.BackColor = Color.FromArgb(33, 38, 45);
+                dgvWorks.RowsDefaultCellStyle.ForeColor = Color.FromArgb(201, 209, 217);
             }
+            else
+            {
+                dgvWorks.BackgroundColor = Color.Gainsboro;
+                dgvWorks.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
+                dgvWorks.ColumnHeadersDefaultCellStyle.BackColor = Color.WhiteSmoke;
+                dgvWorks.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+                dgvWorks.RowsDefaultCellStyle.BackColor = Color.White;
+                dgvWorks.RowsDefaultCellStyle.ForeColor = Color.Black;
+            }
+
+            dgvWorks.ClearSelection();
         }
 
         private void BtnReturn_Click(object sender, EventArgs e)
@@ -73,6 +86,11 @@ namespace Job_Scheduling
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             BtnReturn_Click(null, e);
+        }
+
+        private void DgvWorks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvWorks.ClearSelection();
         }
     }
 }
