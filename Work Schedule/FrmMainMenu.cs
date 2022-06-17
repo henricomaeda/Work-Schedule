@@ -15,6 +15,7 @@ namespace Job_Scheduling
             load = true;
             InitializeComponent();
             Theme(Data.Darkmode(false, true));
+            Data.Load();
         }
 
         private void Theme(bool darkmode)
@@ -135,7 +136,7 @@ namespace Job_Scheduling
             var icon = MessageBoxIcon.Question;
 
             DialogResult result = MessageBox.Show(message, "", buttons, icon);
-            if (result == DialogResult.Yes) BtnLeave_Click(null, e);
+            if (result == DialogResult.Yes) Application.ExitThread();
             else e.Cancel = true;
         }
     }

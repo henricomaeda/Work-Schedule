@@ -6,16 +6,15 @@ namespace Job_Scheduling
 {
     public partial class FrmQuery : Form
     {
-        private readonly int id = -1;
+        private int id = -1;
 
         public FrmQuery()
         {
             InitializeComponent();
-            Data.Load();
 
             if (Data.Darkmode(false, true))
             {
-                this.BackColor = Color.FromArgb(22, 27, 34);
+                BackColor = Color.FromArgb(22, 27, 34);
                 btnReturn.BackColor = Color.FromArgb(33, 38, 45);
                 btnReturn.ForeColor = Color.FromArgb(201, 209, 217);
                 lblSelectedWork.BackColor = Color.FromArgb(22, 27, 34);
@@ -44,13 +43,23 @@ namespace Job_Scheduling
                 dgvWorks.RowsDefaultCellStyle.ForeColor = Color.Black;
             }
 
-            dgvWorks.ClearSelection();
+            if (Data.id != null)
+            {
+                dgvWorks.Rows.Clear();
+
+                for (int count = 0; count < Data.id.Length; count++)
+                {
+                    dgvWorks.Rows.Add(Data.id[count].ToString(), Data.name[count].ToString(), Data.work[count].ToString(), Data.created[count].ToString(), Data.deadline[count].ToString(), Data.status[count].ToString());
+                }
+
+                dgvWorks.ClearSelection();
+            }
         }
 
         private void BtnReturn_Click(object sender, EventArgs e)
         {
             FrmMainMenu mainMenu = new FrmMainMenu();
-            this.Hide();
+            Hide();
             mainMenu.Closed += (s, args) => this.Close();
             mainMenu.ShowDialog();
         }
@@ -68,8 +77,8 @@ namespace Job_Scheduling
                 data = new FrmData(-1);
             }
 
-            this.Hide();
-            data.Closed += (s, args) => this.Close();
+            Hide();
+            data.Closed += (s, args) => Close();
             data.ShowDialog();
         }
 
@@ -88,9 +97,17 @@ namespace Job_Scheduling
             BtnReturn_Click(null, e);
         }
 
-        private void DgvWorks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DgvWorks_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvWorks.ClearSelection();
+
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgvWorks.Rows[e.RowIndex];
+                txtSelectedWork.Text = row.Cells[1].Value.ToString();
+                id = int.Parse(row.Cells[0].Value.ToString());
+                btnUpdate.Enabled = true;
+            }
         }
     }
 }

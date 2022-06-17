@@ -2,14 +2,13 @@
 using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
-using System.Drawing.Drawing2D;
 
 namespace Job_Scheduling
 {
     public partial class FrmData : Form
     {
         private string period = string.Empty;
-        private readonly int id = -1;
+        private int id = -1;
 
         public FrmData(int idRoute)
         {
@@ -64,13 +63,25 @@ namespace Job_Scheduling
             if (idRoute >= 0)
             {
                 id = idRoute;
+
+                btnUpdate.Enabled = true;
+                btnAdd.Enabled = false;
+
+                txtCreated.Text = Data.created[id];
+                txtDeadline.Text = Data.deadline[id];
+                txtFinancialDetails.Text = Data.financialDetails[id];
+                txtJob.Text = Data.work[id];
+                txtJobDetails.Text = Data.details[id];
+                txtName.Text = Data.name[id];
+                txtPeriod.Text = Data.period[id];
+                txtStatus.Text = Data.status[id];
             }
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            if (period == "AM") period = "Entre meia-noite a meio-dia.";
-            else period = "Entre meia-dia a meia-noite.";
+            if (period == "AM") period = "Entre meia-noite a meio-dia";
+            else period = "Entre meia-dia a meia-noite";
 
             CreatedLeave(sender, e);
             DeadlineLeave(sender, e);
@@ -90,7 +101,19 @@ namespace Job_Scheduling
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
+            string defaultError = "Por favor, preencha os campos necessários.";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            MessageBoxIcon icon = MessageBoxIcon.Exclamation;
 
+            if (string.IsNullOrWhiteSpace(txtName.Text)) MessageBox.Show(defaultError, "", buttons, icon);
+            else if (string.IsNullOrWhiteSpace(txtJob.Text)) MessageBox.Show(defaultError, "", buttons, icon);
+            else
+            {
+                Data.Update(id, txtName.Text, txtJob.Text, txtJobDetails.Text, txtFinancialDetails.Text, txtCreated.Text, txtDeadline.Text, txtPeriod.Text, txtStatus.Text);
+                Data.Save();
+                MessageBox.Show("O trabalho foi atualizado com sucesso!", "", buttons, MessageBoxIcon.Information);
+                Clear();
+            }
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -103,19 +126,35 @@ namespace Job_Scheduling
             else if (string.IsNullOrWhiteSpace(txtJob.Text)) MessageBox.Show(defaultError, "", buttons, icon);
             else
             {
-                try
-                {
-
-                }
-                catch
-                {
-
-                }
-                finally
-                {
-
-                }
+                Data.Add(txtName.Text, txtJob.Text, txtJobDetails.Text, txtFinancialDetails.Text, txtCreated.Text, txtDeadline.Text, txtPeriod.Text, txtStatus.Text);
+                Data.Save();
+                MessageBox.Show("O trabalho foi adicionado com sucesso!", "", buttons, MessageBoxIcon.Information);
+                Clear();
             }
+        }
+
+        private void Clear()
+        {
+            id = -1;
+
+            txtCreated.Text = DateTime.Today.ToString("dd/MMMM/yyyy");
+            txtDeadline.Text = DateTime.Today.AddDays(1).ToString("dd/MMMM/yyyy");
+            txtFinancialDetails.Text = "Nenhum";
+            txtJobDetails.Text = "Nenhum";
+            txtJob.Text = "";
+            txtName.Text = "";
+            txtPeriod.Text = period;
+            txtStatus.Text = "Agendado";
+
+            txtCreated.ForeColor = Color.Gray;
+            txtDeadline.ForeColor = Color.Gray;
+            txtFinancialDetails.ForeColor = Color.Gray;
+            txtJobDetails.ForeColor = Color.Gray;
+            txtPeriod.ForeColor = Color.Gray;
+            txtStatus.ForeColor = Color.Gray;
+
+            btnUpdate.Enabled = false;
+            btnAdd.Enabled = true;
         }
 
         private void TextBoxPlaceholder(TextBox textbox, bool placeholder = true)
@@ -124,11 +163,11 @@ namespace Job_Scheduling
             {
                 if (string.IsNullOrWhiteSpace(textbox.Text))
                 {
-                    if (textbox == txtCreated) textbox.Text = DateTime.Today.ToString("dd/MMM/yyyy");
-                    else if (textbox == txtDeadline) textbox.Text = DateTime.Today.AddDays(1).ToString("dd/MMM/yyyy");
+                    if (textbox == txtCreated) textbox.Text = DateTime.Today.ToString("dd/MMMM/yyyy");
+                    else if (textbox == txtDeadline) textbox.Text = DateTime.Today.AddDays(1).ToString("dd/MMMM/yyyy");
                     else if (textbox == txtPeriod) textbox.Text = period;
-                    else if (textbox == txtStatus) textbox.Text = "Agendado.";
-                    else textbox.Text = "Nenhum.";
+                    else if (textbox == txtStatus) textbox.Text = "Agendado";
+                    else textbox.Text = "Nenhum";
                     textbox.ForeColor = Color.Gray;
                 }
             }
