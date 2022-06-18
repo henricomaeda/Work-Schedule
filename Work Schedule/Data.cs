@@ -38,15 +38,9 @@ namespace Job_Scheduling
 
                 if (id != null)
                 {
-                    foreach (int idTemp in id)
-                    {
-                        idList.Add(idTemp);
-                    }
-
-                    idList.Add(id.Last() + 1);
-
                     foreach (string nameTemp in name)
                     {
+                        idList.Add(id.Last() + 1);
                         nameList.Add(nameTemp);
                     }
 
@@ -109,6 +103,41 @@ namespace Job_Scheduling
             catch { }
         }
 
+        public static void Remove(int idRemoved)
+        {
+            try
+            {
+                string nameRemoved = name[idRemoved];
+                string workRemoved = work[idRemoved];
+                string detailsRemoved = details[idRemoved];
+                string financialDetailsRemoved = financialDetails[idRemoved];
+                string createdRemoved = created[idRemoved];
+                string deadlineRemoved = deadline[idRemoved];
+                string periodRemoved = period[idRemoved];
+                string statusRemoved = status[idRemoved];
+
+                string lineRemoved = Encrypt(nameRemoved) + '|' + Encrypt(workRemoved) + '|' + Encrypt(detailsRemoved) + '|' + Encrypt(financialDetailsRemoved) + '|' + Encrypt(createdRemoved) + '|' + Encrypt(deadlineRemoved) + '|' + Encrypt(periodRemoved) + '|' + Encrypt(statusRemoved);
+
+                string filePath = @"C:\Work Schedule\database.txt";
+                string tempFilePath = @"C:\Work Schedule\tempDatabase.txt";
+
+                using (var sr = new StreamReader(filePath))
+                using (var sw = new StreamWriter(tempFilePath))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        if (line != lineRemoved)
+                            sw.WriteLine(line);
+                    }
+                }
+
+                File.Delete(filePath);
+                File.Move(tempFilePath, filePath);
+            }
+            catch { }
+        }
+
         public static void Update(int i, string n, string w, string d, string f, string c, string dl, string p, string s)
         {
             try
@@ -130,54 +159,54 @@ namespace Job_Scheduling
 
         public static void Load()
         {
-            if (id == null)
+            string filePath = @"C:\Work Schedule\database.txt";
+            if (File.Exists(filePath))
             {
-                string filePath = @"C:\Work Schedule\database.txt";
-                if (File.Exists(filePath))
+                try
                 {
-                    try
+                    List<int> idList = new List<int>();
+                    List<string> nameList = new List<string>();
+                    List<string> workList = new List<string>();
+                    List<string> detailsList = new List<string>();
+                    List<string> financialDetailsList = new List<string>();
+                    List<string> createdList = new List<string>();
+                    List<string> deadlineList = new List<string>();
+                    List<string> periodList = new List<string>();
+                    List<string> statusList = new List<string>();
+
+                    StreamReader reader = new StreamReader(filePath);
+                    string line = reader.ReadLine();
+                    int i = 0;
+
+                    while (line != null)
                     {
-                        List<int> idList = new List<int>();
-                        List<string> nameList = new List<string>();
-                        List<string> workList = new List<string>();
-                        List<string> detailsList = new List<string>();
-                        List<string> financialDetailsList = new List<string>();
-                        List<string> createdList = new List<string>();
-                        List<string> deadlineList = new List<string>();
-                        List<string> periodList = new List<string>();
-                        List<string> statusList = new List<string>();
+                        string[] content = line.Split('|');
+                        idList.Add(i);
+                        nameList.Add(Decrypt(content[0]));
+                        workList.Add(Decrypt(content[1]));
+                        detailsList.Add(Decrypt(content[2]));
+                        financialDetailsList.Add(Decrypt(content[3]));
+                        createdList.Add(Decrypt(content[4]));
+                        deadlineList.Add(Decrypt(content[5]));
+                        periodList.Add(Decrypt(content[6]));
+                        statusList.Add(Decrypt(content[7]));
+                        i++;
 
-                        StreamReader reader = new StreamReader(filePath);
-                        string line = reader.ReadLine();
-
-                        while (line != null)
-                        {
-                            string[] content = line.Split('|');
-                            idList.Add(int.Parse(Decrypt(content[0])));
-                            nameList.Add(Decrypt(content[1]));
-                            workList.Add(Decrypt(content[2]));
-                            detailsList.Add(Decrypt(content[3]));
-                            financialDetailsList.Add(Decrypt(content[4]));
-                            createdList.Add(Decrypt(content[5]));
-                            deadlineList.Add(Decrypt(content[6]));
-                            periodList.Add(Decrypt(content[7]));
-                            statusList.Add(Decrypt(content[8]));
-                            line = reader.ReadLine();
-                        }
-
-                        id = idList.ToArray();
-                        name = nameList.ToArray();
-                        work = workList.ToArray();
-                        details = detailsList.ToArray();
-                        financialDetails = financialDetailsList.ToArray();
-                        created = createdList.ToArray();
-                        deadline = deadlineList.ToArray();
-                        period = periodList.ToArray();
-                        status = statusList.ToArray();
-                        reader.Close();
+                        line = reader.ReadLine();
                     }
-                    catch { }
+
+                    id = idList.ToArray();
+                    name = nameList.ToArray();
+                    work = workList.ToArray();
+                    details = detailsList.ToArray();
+                    financialDetails = financialDetailsList.ToArray();
+                    created = createdList.ToArray();
+                    deadline = deadlineList.ToArray();
+                    period = periodList.ToArray();
+                    status = statusList.ToArray();
+                    reader.Close();
                 }
+                catch { }
             }
         }
 
@@ -193,7 +222,32 @@ namespace Job_Scheduling
 
                     for (int count = 0; count < name.Length; count++)
                     {
-                        writer.WriteLine(Encrypt(id[count].ToString()) + '|' + Encrypt(name[count].ToString()) + '|' + Encrypt(work[count].ToString()) + '|' + Encrypt(details[count].ToString()) + '|' + Encrypt(financialDetails[count].ToString()) + '|' + Encrypt(created[count].ToString()) + '|' + Encrypt(deadline[count].ToString()) + '|' + Encrypt(period[count].ToString()) + '|' + Encrypt(status[count].ToString()));
+                        if (status[count] == "Agendado")
+                        writer.WriteLine(Encrypt(name[count].ToString()) + '|' + Encrypt(work[count].ToString()) + '|' + Encrypt(details[count].ToString()) + '|' + Encrypt(financialDetails[count].ToString()) + '|' + Encrypt(created[count].ToString()) + '|' + Encrypt(deadline[count].ToString()) + '|' + Encrypt(period[count].ToString()) + '|' + Encrypt(status[count].ToString()));
+                    }
+
+                    for (int count = 0; count < name.Length; count++)
+                    {
+                        if (status[count] == "Em andamento")
+                            writer.WriteLine(Encrypt(name[count].ToString()) + '|' + Encrypt(work[count].ToString()) + '|' + Encrypt(details[count].ToString()) + '|' + Encrypt(financialDetails[count].ToString()) + '|' + Encrypt(created[count].ToString()) + '|' + Encrypt(deadline[count].ToString()) + '|' + Encrypt(period[count].ToString()) + '|' + Encrypt(status[count].ToString()));
+                    }
+
+                    for (int count = 0; count < name.Length; count++)
+                    {
+                        if (status[count] == "Finalizado")
+                            writer.WriteLine(Encrypt(name[count].ToString()) + '|' + Encrypt(work[count].ToString()) + '|' + Encrypt(details[count].ToString()) + '|' + Encrypt(financialDetails[count].ToString()) + '|' + Encrypt(created[count].ToString()) + '|' + Encrypt(deadline[count].ToString()) + '|' + Encrypt(period[count].ToString()) + '|' + Encrypt(status[count].ToString()));
+                    }
+
+                    for (int count = 0; count < name.Length; count++)
+                    {
+                        if (status[count] == "Cancelado")
+                            writer.WriteLine(Encrypt(name[count].ToString()) + '|' + Encrypt(work[count].ToString()) + '|' + Encrypt(details[count].ToString()) + '|' + Encrypt(financialDetails[count].ToString()) + '|' + Encrypt(created[count].ToString()) + '|' + Encrypt(deadline[count].ToString()) + '|' + Encrypt(period[count].ToString()) + '|' + Encrypt(status[count].ToString()));
+                    }
+
+                    for (int count = 0; count < name.Length; count++)
+                    {
+                        if (status[count] != "Agendado" && status[count] != "Em andamento" && status[count] != "Finalizado" && status[count] != "Cancelado")
+                            writer.WriteLine(Encrypt(name[count].ToString()) + '|' + Encrypt(work[count].ToString()) + '|' + Encrypt(details[count].ToString()) + '|' + Encrypt(financialDetails[count].ToString()) + '|' + Encrypt(created[count].ToString()) + '|' + Encrypt(deadline[count].ToString()) + '|' + Encrypt(period[count].ToString()) + '|' + Encrypt(status[count].ToString()));
                     }
 
                     writer.Close();

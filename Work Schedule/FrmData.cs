@@ -52,18 +52,21 @@ namespace Job_Scheduling
                 lblStatus.ForeColor = Color.FromArgb(240, 246, 252);
                 txtStatus.BackColor = Color.FromArgb(33, 38, 45);
                 txtStatus.ForeColor = Color.FromArgb(201, 209, 217);
-                btnAdd.BackColor = Color.FromArgb(33, 38, 45);
-                btnAdd.ForeColor = Color.FromArgb(201, 209, 217);
                 btnReturn.BackColor = Color.FromArgb(33, 38, 45);
                 btnReturn.ForeColor = Color.FromArgb(201, 209, 217);
+                btnDelete.BackColor = Color.FromArgb(33, 38, 45);
+                btnDelete.ForeColor = Color.FromArgb(201, 209, 217);
                 btnUpdate.BackColor = Color.FromArgb(33, 38, 45);
                 btnUpdate.ForeColor = Color.FromArgb(201, 209, 217);
+                btnAdd.BackColor = Color.FromArgb(33, 38, 45);
+                btnAdd.ForeColor = Color.FromArgb(201, 209, 217);
             }
 
             if (idRoute >= 0)
             {
                 id = idRoute;
 
+                btnDelete.Enabled = true;
                 btnUpdate.Enabled = true;
                 btnAdd.Enabled = false;
 
@@ -76,6 +79,8 @@ namespace Job_Scheduling
                 txtPeriod.Text = Data.period[id];
                 txtStatus.Text = Data.status[id];
             }
+
+            Select();
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
@@ -97,6 +102,13 @@ namespace Job_Scheduling
             this.Hide();
             mainMenu.Closed += (s, args) => this.Close();
             mainMenu.ShowDialog();
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            Data.Remove(id);
+            MessageBox.Show("O trabalho foi removido com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Clear();
         }
 
         private void BtnUpdate_Click(object sender, EventArgs e)
@@ -153,8 +165,11 @@ namespace Job_Scheduling
             txtPeriod.ForeColor = Color.Gray;
             txtStatus.ForeColor = Color.Gray;
 
+            btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
             btnAdd.Enabled = true;
+
+            Data.Load();
         }
 
         private void TextBoxPlaceholder(TextBox textbox, bool placeholder = true)

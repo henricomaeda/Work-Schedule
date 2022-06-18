@@ -16,6 +16,8 @@ namespace Job_Scheduling
             InitializeComponent();
             Theme(Data.Darkmode(false, true));
             Data.Load();
+
+            Select();
         }
 
         private void Theme(bool darkmode)

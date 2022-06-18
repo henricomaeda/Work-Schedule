@@ -54,6 +54,8 @@ namespace Job_Scheduling
 
                 dgvWorks.ClearSelection();
             }
+
+            Select();
         }
 
         private void BtnReturn_Click(object sender, EventArgs e)
