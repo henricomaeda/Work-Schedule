@@ -15,6 +15,18 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_5052F2001CDF493EA155DFE6AC6BDE86"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_76CFA49AAFE04A308C38390B07D65234"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_88C08E00AD9F8F5F9BFD4E41DC77C028"
         "OwnerKey" = "8:_B2F647BF07AD47EBBE196D098D54A383"
         "MsmSig" = "8:_UNDEFINED"
@@ -34,13 +46,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_88C08E00AD9F8F5F9BFD4E41DC77C028"
+        "OwnerKey" = "8:_B2F647BF07AD47EBBE196D098D54A383"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B2F647BF07AD47EBBE196D098D54A383"
+        "OwnerKey" = "8:_88C08E00AD9F8F5F9BFD4E41DC77C028"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -61,6 +73,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -77,6 +105,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -106,6 +150,46 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5052F2001CDF493EA155DFE6AC6BDE86"
+            {
+            "SourcePath" = "8:..\\Work Schedule\\Resources\\Logo.png"
+            "TargetName" = "8:Logo.png"
+            "Tag" = "8:"
+            "Folder" = "8:_BF1A3B195D8C4FCCB69ECDB7A9E0964D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_76CFA49AAFE04A308C38390B07D65234"
+            {
+            "SourcePath" = "8:..\\.gitignore"
+            "TargetName" = "8:.gitignore"
+            "Tag" = "8:"
+            "Folder" = "8:_BF1A3B195D8C4FCCB69ECDB7A9E0964D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_88C08E00AD9F8F5F9BFD4E41DC77C028"
             {
             "AssemblyRegister" = "3:1"
@@ -174,7 +258,7 @@
                 {
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_F87F7147E9B941109136334D87E8B0A0"
                     {
-                    "Name" = "8:WSCode"
+                    "Name" = "8:Softwaeda"
                     "AlwaysCreate" = "11:TRUE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
@@ -223,9 +307,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Work Sched"
+        "ProductName" = "8:Work Schedule"
         "ProductCode" = "8:{1BD4EAF3-646E-41EA-9683-7ACE08D29F6B}"
-        "PackageCode" = "8:{F4E6D57B-DC08-46EF-A240-F221798A83A2}"
+        "PackageCode" = "8:{6EAECA9C-FBE5-4627-8137-4A3B36935513}"
         "UpgradeCode" = "8:{38901535-B7FE-4366-BE74-D2907046BB9C}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -233,16 +317,16 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:WSCode"
+        "Manufacturer" = "8:Softwaeda"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:Work Sched"
+        "Title" = "8:Work Schedule"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Henrico Maeda"
+        "ARPCONTACT" = "8:Henrico Pelozato Maeda"
         "Keywords" = "8:"
-        "ARPCOMMENTS" = "8:Sistema de agenda de trabalhos."
+        "ARPCOMMENTS" = "8:Sistema de agendamento de trabalhos."
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_B9FC7FDCD9E5404A8D5484FE11761C00"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -349,7 +433,7 @@
             {
             "Name" = "8:Work Schedule"
             "Arguments" = "8:"
-            "Description" = "8:Sistema de agenda de trabalhos."
+            "Description" = "8:Sistema de agendamento de trabalhos."
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
@@ -361,9 +445,9 @@
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D7B25913D97340098D983084E264C6AC"
             {
-            "Name" = "8:Work Scheed"
+            "Name" = "8:Work Schedule"
             "Arguments" = "8:"
-            "Description" = "8:Sistema de agenda de trabalhos."
+            "Description" = "8:Sistema de agendamento de trabalhos."
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
